@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
     $_SESSION['email'] = $email;
     header("Location: dashboard.php");
 } else {
-    echo "Login gagal. <a href='login.html'>Coba lagi</a>";
+    echo "Login gagal. <a href='login.httml'>Coba lagi</a>";
 }
 $conn->close();
 ?>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['email'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html>j
 <head><title>Dashboard</title></head>
 <body>
 <h2>Selamat datang, <?php echo $_SESSION['email']; ?>!</h2>
