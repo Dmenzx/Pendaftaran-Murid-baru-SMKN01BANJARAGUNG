@@ -1,1 +1,72 @@
-# admin.php
+<form action="login.php" method="POST">
+  <input type="text" name="email" placeholder="Email atau nomor telepon" required>
+  <input type="password" name="password" placeholder="Kata sandi" required>
+  <input type="submit" class="btn" value="Selanjutnya">
+</form>
+<?php
+session_start();
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "db_login";
+
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$sql = "SELECT * FROM akun WHERE email='$email' AND password='$password'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $_SESSION['email'] = $email;
+    header("Location: dashboard.php");
+} else {
+    echo "Login gagal. <a href='login.html'>Coba lagi</a>";
+}
+$conn->close();
+?>
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$sql = "INSERT INTO akun (email, password) VALUES ('$email', '$password')";
+
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+<h2>Selamat datang, <?php echo $_SESSION['email']; ?>!</h2>
+<a href="logout.php">Logout</a>
+</body>
+</html>
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$sql = "INSERT INTO akun (email, password) VALUES ('$email', '$password')";
+
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+<h2>Selamat datang, <?php echo $_SESSION['email']; ?>!</h2>
+<a href="logout.php">Logout</a>
+</body>
+</html>
